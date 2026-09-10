@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <title>Silva Testes</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="menu" class="screen">
+    <div class="panel">
+      <div class="logo">SILVA<br><span>TESTES</span></div>
+      <p class="tag">Arena de tiro online</p>
+      <input id="name" maxlength="20" placeholder="Seu nome" value="Jogador"/>
+      <button id="soloBtn">MODO SOLO</button>
+      <button id="multiBtn">MULTIPLAYER</button>
+      <div id="roomBox" class="hidden">
+        <input id="room" maxlength="32" placeholder="Código da sala" value="publico"/>
+        <button id="joinBtn">ENTRAR NA SALA</button>
+      </div>
+      <p class="hint">PC: WASD, Shift, C, Espaço, R e clique. Celular: botões na tela.</p>
+    </div>
+  </div>
+
+  <div id="game" class="hidden">
+    <canvas id="canvas"></canvas>
+    <div id="hud">
+      <div><b id="modeLabel">SOLO</b><br><span id="hp">VIDA 100</span></div>
+      <div class="ammo"><span id="ammo">12</span>/12</div>
+      <button id="exitBtn">SAIR</button>
+    </div>
+
+    <div id="mobile">
+      <div class="dpad">
+        <button data-k="up">▲</button>
+        <div><button data-k="left">◀</button><button data-k="down">▼</button><button data-k="right">▶</button></div>
+      </div>
+      <div class="actions">
+        <button id="shootBtn" class="fire">ATIRAR</button>
+        <button id="jumpBtn">PULAR</button>
+        <button id="crouchBtn">AGACHAR</button>
+        <button id="sprintBtn">CORRER</button>
+        <button id="reloadBtn">RECARREGAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
